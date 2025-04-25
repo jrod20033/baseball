@@ -1,0 +1,23 @@
+name: Run R Exit Velos Script11
+
+on:
+  schedule:
+    - cron: '0 13 * * *'  # Every day at 13:00 UTC
+  workflow_dispatch:
+
+jobs:
+  run-r-script:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Set up R
+        uses: r-lib/actions/setup-r@v2
+
+      - name: Install dependencies
+        run: Rscript -e 'if (!require("baseballr")) install.packages("baseballr", repos = "http://cran.us.r-project.org")'
+
+      - name: Run R script
+        run: Rscript test_script11.R  # This now runs the updated script
