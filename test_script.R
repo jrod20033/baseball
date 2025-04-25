@@ -5,7 +5,7 @@ if (!require("baseballr")) install.packages("baseballr", repos = "http://cran.us
 library(baseballr)
 
 # Get today's date
-today <- Sys.Date()
+today <- Sys.Date() -1
 
 # Pull Statcast data for today (batted balls only)
 message("Pulling Statcast data for: ", today)
