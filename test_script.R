@@ -1,5 +1,5 @@
 # top_exit_velos.R
-
+ 
 # Load required package
 if (!require("baseballr")) install.packages("baseballr", repos = "http://cran.us.r-project.org")
 library(baseballr)
