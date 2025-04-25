@@ -1,4 +1,4 @@
-# test_script.R
+# test_script1.R
 
 # Load required package
 if (!require("baseballr")) install.packages("baseballr", repos = "http://cran.us.r-project.org")
