@@ -20,4 +20,4 @@ jobs:
         run: Rscript -e 'if (!require("baseballr")) install.packages("baseballr", repos = "http://cran.us.r-project.org")'
 
       - name: Run R script
-        run: Rscript test_script.R  # This now runs the updated script
+        run: Rscript test_script1.R  # This now runs the updated script
