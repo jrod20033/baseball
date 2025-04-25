@@ -1,11 +1,11 @@
-# top_exit_velos.R
- 
+# test_script.R
+
 # Load required package
 if (!require("baseballr")) install.packages("baseballr", repos = "http://cran.us.r-project.org")
 library(baseballr)
 
 # Get today's date
-today <- Sys.Date() -1
+today <- Sys.Date() - 1  # Yesterday's date
 
 # Pull Statcast data for today (batted balls only)
 message("Pulling Statcast data for: ", today)
