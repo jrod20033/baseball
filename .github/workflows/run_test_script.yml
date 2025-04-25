@@ -1,9 +1,9 @@
-name: Run R Test Script Daily
+name: Run R Exit Velos Script
 
 on:
   schedule:
     - cron: '0 13 * * *'  # Every day at 13:00 UTC
-  workflow_dispatch:        # Optional: lets you trigger it manually from GitHub UI
+  workflow_dispatch:
 
 jobs:
   run-r-script:
@@ -16,5 +16,8 @@ jobs:
       - name: Set up R
         uses: r-lib/actions/setup-r@v2
 
+      - name: Install dependencies
+        run: Rscript -e 'if (!require("baseballr")) install.packages("baseballr", repos = "http://cran.us.r-project.org")'
+
       - name: Run R script
-        run: Rscript test_script.R
+        run: Rscript test_script.R  # This now runs the updated script
